@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      th,
+      td {
+        border: 2px solid brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student data from django model</h1>
+    {{stu}} {% if stu %}
+
+    <table>
+      <thead>
+        <tr>
+          <th>RollNo</th>
+          <th>Name</th>
+          <th>Program</th>
+          <th>Email</th>
+          <th>city</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for st in stu %}
+        <tr>
+          <td>{{st.roll}}</td>
+          <td>{{st.name}}</td>
+          <td>{{st.program}}</td>
+          <td>{{st.email}}</td>
+          <td>{{st.city}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% else %}
+    <h1>No Data</h1>
+    {% endif %}
+  </body>
+</html>
